@@ -14,8 +14,6 @@
 }
 .headerContainer.listMode
 {
-    width:100%;
-    max-width: 1024px;
     margin:20px 0px 30px 0px;
 }
 .headerList
@@ -101,7 +99,7 @@
     background-color: white;
     color:grey;
     border-radius: 5px;
-    box-shadow: 10px 7px 16px 1px #DDBB40;
+    box-shadow: 10px 7px 16px 1px #15140d;
     z-index: 2;
 }
 .optionItem
@@ -125,4 +123,8 @@
     height:30px;
     border:1px solid black;
     cursor:pointer;
+}
+.optionCounterButton:disabled
+{
+    cursor: not-allowed;
 }

@@ -19,7 +19,8 @@
 {
     width: 100%;
     object-fit: cover;
-    filter: brightness(48%);
+    height:300px;
+    filter: brightness(50%);
 }
 .featuredTitles
 {
@@ -28,4 +29,6 @@
     color:rgb(244, 244, 239);
     left: 10px;
     font-weight: 50px;
+    font-size: 15px;
+    font-style: oblique;
 }

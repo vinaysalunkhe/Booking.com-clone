@@ -44,7 +44,7 @@ const Header = ({type}) => {
            })
   }
   return (
-    <div className="header">
+    <div className="header" >
       <div className={type==='list' ? 'headerContainer listMode':'headerContainer'}>
         <div className="headerList">
           <div className="headerListItem active">
@@ -84,28 +84,27 @@ const Header = ({type}) => {
               className="headerSearchInput"
             />
           </div>
-
+       
           <div className="headerSearchItem">
             <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-            <span
-              onClick={() => setOpenDate(!openDate)}
-              className="headerSearchText"
-            >{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
+            <span onClick={() => setOpenDate(!openDate)} className="headerSearchText">
+              {`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
               date[0].endDate,
               "dd/MM/yyyy"
             )}`}</span>
-            {openDate && (
+            { openDate && (
               <DateRange
                 className="date"
                 editableDateInputs={true}
                 onChange={(item) => setDate([item.selection])}
+                
                 moveRangeOnFirstSelection={false}
                 ranges={date}
               />
             ) }
           </div>
 
-          <div className="headerSearchItem">
+          <div className="headerSearchItem" >
             <FontAwesomeIcon icon={faPerson} className="headerIcon" />
             <span className="headerSearchText" onClick={()=>{setOpenOptions(!openOptions)}}>{`${options.adult} adult .  ${options.children} children .  ${options.room} room`}</span>
            { openOptions && <div className="options">
