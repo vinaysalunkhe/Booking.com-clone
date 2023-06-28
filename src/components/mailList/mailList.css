@@ -10,6 +10,11 @@
     background-color: black;
     padding: 50px;
 }
+.inputContainer
+{
+    display: flex;
+    align-items: center;
+}
 .inputContainer>input
 {
     width:300px;
@@ -29,4 +34,21 @@
     cursor: pointer;
     color: aliceblue;
     margin-right: 10px;
+    
+}
+@media (max-width:600px)
+{
+    .mail
+    {
+        width:auto;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+        color: aliceblue;
+        background-color: black;
+        padding: 50px;
+    }
+
 }

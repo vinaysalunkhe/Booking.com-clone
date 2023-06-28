@@ -1,130 +1,181 @@
-.header
-{
-    background-color:rgb(6, 5, 7);
-    display: flex;
-    justify-content:center;
-    color:white;
-    position: relative;
-}
-.headerContainer
-{
-    width:100%;
-    max-width: 1024px;
-    margin:20px 0px 100px 0px;
-}
-.headerContainer.listMode
-{
-    margin:20px 0px 30px 0px;
-}
-.headerList
-{
-    display:flex;
-   gap:50px;
-}
-.headerListItem
-{
+.header {
+    background-color: rgb(6, 5, 7);
     display: flex;
     justify-content: center;
-    gap:10px;
-    cursor: pointer;
-}
-.headerListItem.active
-{
-    border:2px solid yellow;
-    padding:7px;
-    border-radius: 20px;
+    align-items: center;
+    color: white;
+    position: relative;
+    margin-top: 1px;
+    padding: 20px 0;
+   
+  }
+  
+  .headerContainer {
+    width: 100%;
+    max-width: 1024px;
+    max-height: max-content;
+    margin: 20px 0px 100px 0px;
+  }
+  
+  .headerContainer.listMode {
+    margin: 20px 0px 30px 0px;
     
-}
-.headerTitle
-{
+  }
+  
+  .headerList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+  }
+  
+  .headerListItem {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .headerListItem.active {
+    border: 2px solid yellow;
+    padding: 7px;
+    border-radius: 20px;
+  }
+  
+  .headerTitle {
     font-style: italic;
     padding-top: 20px;
     margin: 10px 0px;
-}
-.headerbtn
-{
+    text-align: center;
+  }
+  .headerbtnDiv
+  {
+    display: flex;
+    justify-content: center;
    
+  }
+  .headerbtn {
+  
     border: none;
+    border-radius: 5px;
     padding: 10px;
-    cursor:pointer;
-    color:aliceblue;
+    cursor: pointer;
+    color: aliceblue;
     background-color: rgb(216, 169, 40);
     font-weight: 500;
-}
-.headerSearch
-{
-    height:30px;
-    width: 100%;
+    margin-top: 20px;
+  
+    
+  }
+  
+  .headerSearch {
+    height: max-content;
+    width:90%;
     max-width: 1024px;
     background-color: white;
     display: flex;
     justify-content: space-around;
-    padding: 10px 0px;
+    padding: 10px 10px;
     align-items: center;
     border: 3px solid orange;
     position: absolute;
     border-radius: 5px;
     bottom: -25px;
-}
-.headerIcon
-{
-    color:brown; 
-}
-.headerSearchItem
-{
+   
+   
+  }
+  
+  .headerIcon {
+    color: brown;
+  }
+  
+  .headerSearchItem {
     display: flex;
     align-items: center;
-    gap:10px;
-}
-.headerSearchInput
-{
+    gap: 10px;
+    padding: 0px 5px;
+    flex-wrap: wrap;
+  }
+  
+  .headerSearchInput {
     border: none;
-    outline:none;
-}
-.headerSearchText
-{
-    cursor:pointer;
-    color:grey;
-}
-.date
-{
+    outline: none;
+    flex-grow: 1;
+  }
+  
+  .headerSearchText {
+    cursor: pointer;
+    color: grey;
+  }
+  
+  .date {
     position: absolute;
-    top:40px;
+    top: 50px;
     z-index: 2;
-}
-.options
-{
-    position:absolute;
-    top:53px;
+  
+  }
+  
+  /* Adjust the properties for smaller screens */
+  @media (max-width: 768px) {
+   
+  }
+  
+  .options {
+    position: absolute;
+    top: 53px;
     background-color: white;
-    color:grey;
+    color: grey;
     border-radius: 5px;
     box-shadow: 10px 7px 16px 1px #15140d;
     z-index: 2;
-}
-.optionItem
-{
-    width:250px;
+  }
+  
+  .optionItem {
+    width: 250px;
     display: flex;
-    justify-content:space-between;
-    margin:10px;
-}
-.optionCounter
-{
-    display:flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  
+  .optionCounter {
+    display: flex;
     align-items: center;
     gap: 10px;
     font-size: 12px;
-    color:black;
-}
-.optionCounterButton
-{
-    width:30px;
-    height:30px;
-    border:1px solid black;
-    cursor:pointer;
-}
-.optionCounterButton:disabled
-{
+    color: black;
+  }
+  
+  .optionCounterButton {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  
+  .optionCounterButton:disabled {
     cursor: not-allowed;
-}
+  }
+  
+  @media (max-width: 768px) {
+    .headerContainer {
+      padding: 0 20px;
+    }
+  
+    .headerList {
+      justify-content: center;
+    }
+  
+    .headerListItem {
+      margin-bottom: 10px;
+    }
+    .date {
+      width: 80%; /* Change the width to 80% for smaller screens */
+      left: 10%; /* Center the div horizontally by adjusting the left position */
+    }
+    .options {
+      width: 80%; /* Change the width to 80% for smaller screens */
+      left: 10%; /* Center the div horizontally by adjusting the left position */
+    }
+  }
+  

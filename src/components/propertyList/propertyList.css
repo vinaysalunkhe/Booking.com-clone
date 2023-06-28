@@ -14,6 +14,7 @@
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+   
 }
 .pListImg
 {
@@ -21,6 +22,7 @@
     height:150px;
     object-fit: cover;
 }
+
 .pListTitle>h1
 {
     font-size: 18px;
@@ -33,4 +35,20 @@
     margin-left: 30px;
     font-weight: 300px;
     
+}
+@media (max-width:768px)
+{
+        .pListTitle>h1
+        {
+            font-size: 18px;
+            margin-left: 0px;
+
+        }
+        .pListTitle>h2
+        {
+            font-size: 12px;
+            font-weight: 300px;
+            margin-left: 0px;
+            
+        }
 }

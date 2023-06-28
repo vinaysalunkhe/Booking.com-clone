@@ -1,34 +1,33 @@
-.featured
-{
+.featured {
     width: 100%;
     max-width: 1024px;
-    display:flex;
-    justify-content: space-between;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
     z-index: 1;
-}
-.featuredItem
-{
+  }
+  
+  .featuredItem {
     position: relative;
-    color:white;
+    color: white;
     border-radius: 10px;
     overflow: hidden;
     height: 250px;
-}
-.featuredImg
-{
+  }
+  
+  .featuredImg {
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    height:300px;
     filter: brightness(50%);
-}
-.featuredTitles
-{
+  }
+  
+  .featuredTitles {
     position: absolute;
-    bottom:10px;
-    color:rgb(244, 244, 239);
+    bottom: 10px;
     left: 10px;
-    font-weight: 50px;
+    color: rgb(244, 244, 239);
     font-size: 15px;
     font-style: oblique;
-}
+  }
+  
