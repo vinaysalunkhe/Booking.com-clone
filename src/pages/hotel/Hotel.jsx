@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./hotel.css"
 import Header from "../../components/header/Header"
 import Navbar from "../../components/navbar/Navbar"
@@ -6,12 +6,35 @@ import MailList from "../../components/mailList/MailList"
 import Footer from "../../components/footer/Footer"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import {faCircleXmark} from '@fortawesome/free-solid-svg-icons'
+import {faCircleArrowRight} from '@fortawesome/free-solid-svg-icons'
+import {faCircleArrowLeft} from '@fortawesome/free-solid-svg-icons'
 const Hotel = () => {
+const [slideNumber,setSlideNumber]=useState(0);
+const [open,setOpen]=useState(false);
 
+const handleOpen=(i)=>
+{
+   setSlideNumber(i);
+   setOpen(true);
+}
+const handleMove=(direction)=>
+{
+  let newSlideNumber;
+   if(direction==="l")
+   {
+      newSlideNumber = slideNumber===0?5:slideNumber-1;
+   }
+   else
+   {
+    newSlideNumber = slideNumber===5?0:slideNumber + 1;
+   }
+   setSlideNumber(newSlideNumber);
+}
 const photos = [{src:"https://cf.bstatic.com/xdata/images/hotel/square600/74065680.webp?k=2269b6b33c4d7c1d2b25d2964dc984eed76dc648fcd2b9d2073db0da10a1dc3b&o="}
                   ,
                   {
-                    src:"https://cf.bstatic.com/xdata/images/hotel/square600/74065680.webp?k=2269b6b33c4d7c1d2b25d2964dc984eed76dc648fcd2b9d2073db0da10a1dc3b&o="
+                    src:"https://q-xx.bstatic.com/xdata/images/region/170x136/68606.jpg?k=4b43b9128b79beaab4ca2e8c038ddf5709b0b90608afbca222cfbe08fabda7d2&o="
                   },
                   {
                     src:"https://cf.bstatic.com/xdata/images/hotel/square600/74065680.webp?k=2269b6b33c4d7c1d2b25d2964dc984eed76dc648fcd2b9d2073db0da10a1dc3b&o="
@@ -30,6 +53,16 @@ const photos = [{src:"https://cf.bstatic.com/xdata/images/hotel/square600/740656
       <Navbar/>
       <Header type="list"/>
       <div className="hotelContainer">
+       {
+        open && <div className="slider">
+        <FontAwesomeIcon icon={faCircleXmark} className='close' onClick={()=>setOpen(false)}/>
+        <FontAwesomeIcon icon={faCircleArrowLeft} className='arrow' onClick={()=>{ handleMove("l")}}/>
+        <div className="sliderWrapper">
+          <img src={photos[slideNumber].src} alt="" className="sliderImg" />
+        </div>
+        <FontAwesomeIcon icon={faCircleArrowRight} className='arrow' onClick={()=>{ handleMove("r")}}/>
+          </div>
+        }
         <div className="hotelWrapper">
           <button className="bookNow">Reserve or Book Now</button>
           <h1 className="hotelTitle">Grand hotel</h1>
@@ -45,9 +78,9 @@ const photos = [{src:"https://cf.bstatic.com/xdata/images/hotel/square600/740656
          </span>
          <div className="hotelImages">
           {
-            photos.map(photos=>(
+            photos.map((photos,i)=>(
               <div className="hotelImgWrapper">
-                <img src={photos.src} alt="" className="hotelImg" />
+                <img  onClick={()=>handleOpen(i)} src={photos.src} alt="" className="hotelImg" />
               </div>
             ))
           }
